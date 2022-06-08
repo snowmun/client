@@ -9,39 +9,59 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Bsale</title>
 </head>
 <body>
-    <div class="topnav">
-        <a class="active navbar" href="#home">Bsale Test</a>
-        <label class="navbar"  for="cars">Categoria: </label>
-        <!-- se crea un dropbox para la captura de categoria  -->
-        <select class="navbar"  name="category" id="category">
-            <option  value="1">bebida Energetica</option>
-            <option  value="2">pisco</option>
-            <option  value="3">ron</option>
-            <option  value="4">bebida</option>
-            <option  value="5">snack</option>
-            <option  value="6">cerbeza</option>
-            <option  value="7">vodka</option>
-        </select>
-        <!-- <input class="m-2 mx-auto form-control navbar" type="text" id="myInput" onkeyup="miBuscador()" placeholder="Ingrese Nombre Producto"> -->
+    <!-- extraigo un navbar desde bootstrap en el cual lo implemente lo mejor posible a lo solicitado -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" >BSale Test</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
+            <li class="dropdown">
+              <select class="btn btn-light dropdown-toggle"  name="category" id="category">
+                <!-- se crea un dropdown en el cual nos dara la opcion de elejir una categoria y al elejirla enviara
+                como value un numero que es equivalente al id de cada categoria creada.
+                esto luego lo recibo con ajax desde el index.js -->
+                <option selected disabled   >Seleccione Categoria</option>
+                <option  value="1" >bebida Energetica</option>
+                <option  value="2">pisco</option>
+                <option  value="3">ron</option>
+                <option  value="4">bebida</option>
+                <option  value="5">snack</option>
+                <option  value="6">cerbeza</option>
+                <option  value="7">vodka</option>
+              </select>
+            </li>
+          </ul>
+          <form class="d-flex navbar-nav me-auto mb-2 mb-lg-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <i class="fas fa-shopping-cart"></i>
+            </li>
+          </ul>
+        </div>
       </div>
-      <!-- se crea un contenedor padre que tome todo el div  -->
-            <!-- se crea targeta para mostrar los productos -->
-        
-        <div id="contenedorPadre" class="row">
-            <div class="column">
-                <div class="card">
-               
-                </div>
-            </div>
-          </div>
-
-        <script src="../js/index.js"></script>
+    </nav>
+    <!-- se crea un contenedor padre que tome todo el div interno -->
+    <div class="container">
+      <div id="divpadre" class="row ">
+        <!-- aqui llega la informaicon que envia mi index.js -->
+      </div>
+    </div>
 
 
 
-
-</body>
+    <!-- exportamos bootstrap ,jquery y mi index.js para el consumo  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" crossorigin="anonymous"></script>
+    <script src="../js/index.js"></script>
+  </body>
 </html>
