@@ -4,9 +4,12 @@
                 type:"GET",
                 url:`https://api-bsale-test1.herokuapp.com/api/v0/searchallproduct`,
                 success: (data)=>{
+                        // se toma la data completa pero la api ademas nos da mas informacion entonces debemos desestructurar la data 
+                        // y caputrar la data interna de nuestra api
+                        const {Data} = data
                         // se destructura cada valor que me dio la api y se usaran 
                         // los valores que se solicitaron
-                        data.forEach(({name,url_image,price}) => {
+                        Data.forEach(({name,url_image,price}) => {
                         // como se menciono en el html el div padre es el 
                         // el div principal en el cual vendra todo el div hijo puesto mas adelante
                         $("#divpadre").append(
@@ -24,7 +27,12 @@
         });
         $("#category").on("change",({target})=>{
                 $("#divpadre").html("")
-                for (const iterator of guardarObjeto) {
+                 // se toma la data completa que se guarda en la constantey al igual que la api  nos da mas informacion entonces debemos desestructurar la data 
+                 // y caputrar la data interna de nuestra api
+                const {Data} = guardarObjeto
+                // hacemor un for of en el cual recorreremos  por nuestro div padre
+                for (const iterator of Data) {
+                        // filtramos que el id capturado de target sea igual al de category de nuestro producto de la base de datos 
                         if(iterator.category == target.value){
                                 $("#divpadre").append(
                                         `<div class="card" style="width: 18rem;">
