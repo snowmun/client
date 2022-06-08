@@ -15,7 +15,7 @@
     <div class="topnav">
         <a class="active navbar" href="#home">Bsale Test</a>
         <label class="navbar"  for="cars">Categoria: </label>
-        
+        <!-- se crea un dropbox para la captura de categoria  -->
         <select class="navbar"  name="category" id="category">
             <option  value="1">bebida Energetica</option>
             <option  value="2">pisco</option>
@@ -25,20 +25,18 @@
             <option  value="6">cerbeza</option>
             <option  value="7">vodka</option>
         </select>
-        <input class="m-2 mx-auto form-control navbar" type="text" id="myInput" onkeyup="miBuscador()" placeholder="Ingrese Nombre Producto">
+        <!-- <input class="m-2 mx-auto form-control navbar" type="text" id="myInput" onkeyup="miBuscador()" placeholder="Ingrese Nombre Producto"> -->
       </div>
-        <div id="contenedorPadre">
-            <div class="tarjeta">
-                <div class="cuerpo">
-                   
-                </div>
-                <div>
-                    <label class="preciocolor" id="precioProducto" for=""></label>
-                    <button class="botontienda"><i class="fas fa-cart-plus fa-2x "></i></button>
+      <!-- se crea un contenedor padre que tome todo el div  -->
+            <!-- se crea targeta para mostrar los productos -->
+        
+        <div id="contenedorPadre" class="row">
+            <div class="column">
+                <div class="card">
+               
                 </div>
             </div>
-        </div>
-       
+          </div>
 
         <script src="../js/index.js"></script>
 
